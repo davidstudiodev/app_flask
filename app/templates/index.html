@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>Hola mundo, desde plantilla de Flask.</h1>
-    <h2>{{ data }}</h2>
-    <h2>{{ data.Titulo }}</h2>
+
+{% extends './layout.html' %}
+
+{% block title %}{{data.Titulo}}{% endblock %}
+
+{% block body %}
+
+<h1>Hola mundo, desde plantilla de Flask.</h1>
+    <!-- <h2>{{ data }}</h2> -->
+    <!-- <h2>{{ data.Titulo }}</h2> -->
     <h2>{{ data.Bienvenida }}</h2>
+    <!-- <h2>{{ data.Cursos }}</h2> -->
 
+    
     <ul>
-        {% for i in data.Cursos %}
-        <li> {{ i }} </li>
-        {% endfor %}
-    </ul>
+        {% if data.Numero_cursos > 0 %}     
+            {% for i in data.Cursos %}
+            <li> {{ i }} </li>
+            {% endfor %}
+        
+        {% else %}
+            <h1>No hay cursos</h1>    
 
-</body>
-</html>
+        {% endif %}
+    </ul> 
+
+{% endblock %}

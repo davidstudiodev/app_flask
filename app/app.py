@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     #return '<h1> ¡Hola Mundo desde Flask! ¿Qué tal? </h1>'
     
-    cursos = ['PHP', 'Python', 'Java', 'C#']
+    cursos = ['PHP', 'Python', 'JavaScript', 'C++']
     
     data = {
         'Titulo': 'Index',
